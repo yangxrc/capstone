@@ -41,7 +41,7 @@ class PathPlanner:
         # Initialize drones at starting positions
         self.agents = []
         for i in range(n_drones):
-            start_pos = np.array([-10, -10 + i*5, 0])  # Staggered starting positions
+            start_pos = np.array([-10, -10 + i*5, 0])  #set drone initial place
             self.agents.append(Agent(start_pos))
             
         self.unscanned_sensors = list(range(len(sensor_positions)))

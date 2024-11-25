@@ -1,4 +1,4 @@
-### Path Planning by Genetic Algorithm inspried by the Phsics
+### Path Planning by Genetic Algorithm inspried by the Physics
 ----------
 
 _Here are three class used here to implement this path planing, which are `Agent`, `PathPlanner`, `GeneticOptimizer`._

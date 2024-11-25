@@ -61,15 +61,17 @@ def plot_drone_paths(drone_paths, sensor_positions=None, save_path=None):
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
     
-    # plt.show()
+    plt.show()
 
 if __name__ == "__main__":
     sensor_positions = np.array([
-    [10, 10, 0],
-    [20, 20, 0],
+    [6, 17, 0],
+    [20, 52, 0],
     [30, 30, 0],
+    [40,10,0],
     [12, 13, 0],
     [24, 35, 0],
+    
 
 ])
 
@@ -84,4 +86,4 @@ if __name__ == "__main__":
     drone_paths = [agent.path for agent in planner.agents]  
       
 
-    plot_drone_paths(drone_paths, sensor_positions,"drone_paths.png")
+    plot_drone_paths(drone_paths, sensor_positions)
