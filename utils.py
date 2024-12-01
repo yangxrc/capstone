@@ -3,7 +3,7 @@ from typing import List, Tuple
 import random
 
 class Agent:
-    def __init__(self, position: np.ndarray, mass: float = 5.0, max_velocity: float = 10.0):
+    def __init__(self, position: np.ndarray, mass: float = 4.5, max_velocity: float = 10.0):
         self.position = position.astype(np.float64)
         self.velocity = np.zeros(3,dtype=np.float64)
         self.acceleration = np.zeros(3,dtype=np.float64)
@@ -241,7 +241,7 @@ class GeneticOptimizer:
         
         best_fitness = float(0.1)
         best_parameters = None
-        
+       
         for generation in range(self.n_generations):
             # Evaluate fitness
             fitness_scores = [(params, self.calculate_fitness(params)) 
@@ -257,7 +257,7 @@ class GeneticOptimizer:
                 
             # Select top performers
             top_performers = [params for params, _ in fitness_scores[:self.population_size//2]]
-            
+            t_po=top_performers.copy()
             # Create new population
             new_population = top_performers.copy()
             
@@ -271,7 +271,9 @@ class GeneticOptimizer:
                 
             population = new_population
             
-        return best_parameters
+        if best_parameters:
+            return best_parameters
+        return t_po[0]
 
 
 def optimize_drone_paths(sensor_positions: np.ndarray, n_drones: int = 4) -> dict:
